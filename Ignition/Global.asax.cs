@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.SessionState;
 
 namespace Ignition
 {
-    using Funq;
     //using Ignition.Contracts;
-    using ServiceStack.WebHost.Endpoints;
 
     public class Global : System.Web.HttpApplication
     {
