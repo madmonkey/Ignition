@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ignition", "Ignition.csproj", "{3465943B-BD08-4741-B546-E10650187969}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ignition.Contracts", "..\Ignition.Contracts\Ignition.Contracts.csproj", "{855FBFFC-26CC-4706-890A-3E22615CBBCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ignition.Data", "..\Ignition.Data\Ignition.Data.csproj", "{0176AB39-D0F5-4CDF-9A52-3ED014F3CE95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3465943B-BD08-4741-B546-E10650187969}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3465943B-BD08-4741-B546-E10650187969}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3465943B-BD08-4741-B546-E10650187969}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3465943B-BD08-4741-B546-E10650187969}.Release|Any CPU.Build.0 = Release|Any CPU
+		{855FBFFC-26CC-4706-890A-3E22615CBBCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{855FBFFC-26CC-4706-890A-3E22615CBBCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{855FBFFC-26CC-4706-890A-3E22615CBBCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{855FBFFC-26CC-4706-890A-3E22615CBBCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0176AB39-D0F5-4CDF-9A52-3ED014F3CE95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0176AB39-D0F5-4CDF-9A52-3ED014F3CE95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0176AB39-D0F5-4CDF-9A52-3ED014F3CE95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0176AB39-D0F5-4CDF-9A52-3ED014F3CE95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
