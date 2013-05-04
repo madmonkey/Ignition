@@ -1,0 +1,16 @@
+﻿Functional Requirements:
+1. Given the sample data provided, design and build an n-tiered system for the storage and
+maintenance of customer data.
+2. Create a view that allows the user to be able to enter the customer name as a search and be
+returned the five most likely matches.
+3. Create a view that displays the number and percentage of customers by location and category.
+4. The system should record the time and date of customer creation, updates and removal. Create
+a view to display this information.
+ 
+Non-functional Requirements
+1. MS SQL Server must be used (SQL Server Express Edition is available as a free download).
+2. C# is preferred, VB.NET will be accepted.
+3. The solution must be provided as a Visual Studio 2010 solution and target v4.0 of the .NET
+Framework.
+4. The choice of UI technology and other frameworks is up to the candidate, as long as all licensing
+requirements have been satisfied.

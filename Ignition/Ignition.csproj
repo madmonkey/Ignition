@@ -99,8 +99,10 @@
     <Content Include="Global.asax" />
     <Content Include="jqunback-1.51.min.js" />
     <Content Include="packages.config" />
+    <Content Include="SampleData.csv" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="README.txt" />
+    <Content Include="Requirements.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
