@@ -1,7 +1,5 @@
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Contracts\bin\Debug\Ignition.Contracts.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Contracts\bin\Debug\Ignition.Contracts.pdb
-C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Contracts\obj\Debug\Ignition.Contracts.dll
-C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Contracts\obj\Debug\Ignition.Contracts.pdb
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Contracts\bin\Debug\ServiceStack.Common.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Contracts\bin\Debug\ServiceStack.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Contracts\bin\Debug\ServiceStack.Interfaces.dll
@@ -17,4 +15,5 @@ C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Contract
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Contracts\bin\Debug\ServiceStack.OrmLite.SqlServer.pdb
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Contracts\bin\Debug\ServiceStack.Redis.xml
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Contracts\bin\Debug\ServiceStack.Text.xml
-C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Contracts\obj\Debug\Ignition.Contracts.csprojResolveAssemblyReference.cache
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Contracts\obj\Debug\Ignition.Contracts.dll
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Contracts\obj\Debug\Ignition.Contracts.pdb

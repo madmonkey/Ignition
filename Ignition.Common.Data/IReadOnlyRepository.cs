@@ -7,12 +7,8 @@ namespace Ignition.Common.Data
     /// Read-only interface
     /// </summary>
     /// <typeparam name="TEntity">The type of the entity.</typeparam>
-    public interface IReadOnlyRepository<out TEntity> where TEntity : class
+    public interface IReadOnlyRepository<out TEntity> : IQueryable<TEntity> where TEntity : class
     {
-        /// <summary>
-        /// Linqs this instance.
-        /// </summary>
-        /// <returns>IQueryable interface for TEntity</returns>
-        IQueryable<TEntity> Linq();
+        IQueryable<TEntity> AsQueryable();
     }
 }

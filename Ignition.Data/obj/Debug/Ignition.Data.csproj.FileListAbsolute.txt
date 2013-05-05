@@ -1,8 +1,5 @@
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Debug\Ignition.Data.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Debug\Ignition.Data.pdb
-C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\obj\Debug\Ignition.Data.csprojResolveAssemblyReference.cache
-C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\obj\Debug\Ignition.Data.dll
-C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\obj\Debug\Ignition.Data.pdb
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Debug\FluentNHibernate.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Debug\Iesi.Collections.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Debug\Ignition.Common.Data.dll
@@ -11,3 +8,6 @@ C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Debug\FluentNHibernate.xml
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Debug\Iesi.Collections.xml
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Debug\NHibernate.xml
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\obj\Debug\Ignition.Data.csprojResolveAssemblyReference.cache
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\obj\Debug\Ignition.Data.dll
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\obj\Debug\Ignition.Data.pdb

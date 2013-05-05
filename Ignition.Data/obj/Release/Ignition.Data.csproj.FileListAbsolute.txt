@@ -1,0 +1,13 @@
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\obj\Release\Ignition.Data.csprojResolveAssemblyReference.cache
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Release\Ignition.Data.dll
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Release\Ignition.Data.pdb
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Release\FluentNHibernate.dll
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Release\Iesi.Collections.dll
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Release\Ignition.Common.Data.dll
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Release\NHibernate.dll
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Release\Ignition.Common.Data.pdb
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Release\FluentNHibernate.xml
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Release\Iesi.Collections.xml
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin\Release\NHibernate.xml
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\obj\Release\Ignition.Data.dll
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\obj\Release\Ignition.Data.pdb

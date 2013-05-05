@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Ignition.Data
 {
+    using Common.Data;
+    using FluentNHibernate.Cfg;
+    using FluentNHibernate.Cfg.Db;
+    using FluentNHibernate.Conventions;
+    using FluentNHibernate.Conventions.Instances;
+    using NHibernate;
+    using NHibernate.Tool.hbm2ddl;
     using System;
     using System.Configuration;
     using System.Data;
     using System.Data.OleDb;
     using System.Data.SqlClient;
     using System.Reflection;
-    using Common.Data;
-    using FluentNHibernate.Cfg;
-    using FluentNHibernate.Cfg.Db;
-    using NHibernate;
-    using NHibernate.Tool.hbm2ddl;
-    //using SunGardPS.Common.Data;
+    using Ignition.Common.Data;
 
     /// <summary>
     /// The fluent-helper for common tasks
@@ -61,8 +58,8 @@ namespace Ignition.Data
         public FluentHelper(bool autoConfig)
             : this(() => Fluently.Configure()
                             .Database(MsSqlConfiguration.MsSql2000.ConnectionString(
-                                c => c.Server(@".\sqlexpress")
-                                        .Database("WebUpdater")
+                                c => c.Server(@".")
+                                        .Database("Ignition")
                                         .TrustedConnection()))
                             .Mappings(m => m.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly()))
                             .ExposeConfiguration(c =>
@@ -170,7 +167,7 @@ namespace Ignition.Data
                         {
                             var splitter = new[] { "\r\nGO\r\n" };
 
-                            #region AutoMagic DB creation
+                            #region AutoMagic view/trigger etc. creation
                             databaseScript = string.Empty;
                             //databaseScript = SunGardPS.WebUpdater.Service.Data.Scripts.SQLServer.Replace(
                             //    databaseToken,

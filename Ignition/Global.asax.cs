@@ -2,6 +2,10 @@
 
 namespace Ignition
 {
+    using NHibernate;
+    using ServiceStack.Configuration;
+    using ServiceStack.WebHost.Endpoints;
+
     //using Ignition.Contracts;
 
     public class Global : System.Web.HttpApplication
@@ -42,6 +46,20 @@ namespace Ignition
 
         }
 
+        //public class IgnitionServiceAppHost : AppHostBase
+        //{
+        //    private readonly IContainerAdapter _containerAdapter;
+        //    public IgnitionServiceAppHost(ISessionFactory sessionFactory)
+        //        : base("Ignition Sample", typeof(ProductFindService).Assembly)
+        //    {
+        //        base.Container.Register<ISessionFactory>(sessionFactory);
+        //    }
+
+        //    public override void Configure(Funq.Container container)
+        //    {
+        //        container.Adapter = _containerAdapter;
+        //    }
+        //}
         //public class HelloAppHost : AppHostBase
         //{
         //    Tell Service Stack the name of your application and where to find your web services

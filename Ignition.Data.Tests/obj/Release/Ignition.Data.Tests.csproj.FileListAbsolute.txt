@@ -1,0 +1,1 @@
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data.Tests\obj\Release\Ignition.Data.Tests.csprojResolveAssemblyReference.cache

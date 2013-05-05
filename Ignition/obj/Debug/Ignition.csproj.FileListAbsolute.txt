@@ -1,9 +1,10 @@
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\Ignition.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\Ignition.pdb
-C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\obj\Debug\Ignition.dll
-C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\obj\Debug\Ignition.pdb
-C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\obj\Debug\Ignition.csprojResolveAssemblyReference.cache
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\FluentNHibernate.dll
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\Iesi.Collections.dll
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\Ignition.Data.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\NHibernate.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\ServiceStack.Common.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\ServiceStack.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\ServiceStack.Interfaces.dll
@@ -13,6 +14,11 @@ C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\Serv
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\ServiceStack.ServiceInterface.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\ServiceStack.Text.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\WebActivator.dll
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\Ignition.Common.Data.dll
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\Ignition.Data.pdb
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\FluentNHibernate.xml
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\Iesi.Collections.xml
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\NHibernate.xml
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\ServiceStack.xml
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\ServiceStack.Common.xml
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\ServiceStack.Interfaces.xml
@@ -20,3 +26,7 @@ C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\Serv
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\ServiceStack.OrmLite.SqlServer.pdb
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\ServiceStack.Redis.xml
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\ServiceStack.Text.xml
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\Ignition.Common.Data.pdb
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\obj\Debug\Ignition.csprojResolveAssemblyReference.cache
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\obj\Debug\Ignition.dll
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\obj\Debug\Ignition.pdb

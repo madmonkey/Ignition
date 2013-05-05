@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ignition.Data", "..\Ignitio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ignition.Common.Data", "..\Ignition.Common.Data\Ignition.Common.Data.csproj", "{0E311E52-F6E7-48C2-AC9D-D61F788BA4E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ignition.Data.Tests", "..\Ignition.Data.Tests\Ignition.Data.Tests.csproj", "{39DC52F3-CCAF-4931-99CA-1204AA454F67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{0E311E52-F6E7-48C2-AC9D-D61F788BA4E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E311E52-F6E7-48C2-AC9D-D61F788BA4E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E311E52-F6E7-48C2-AC9D-D61F788BA4E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39DC52F3-CCAF-4931-99CA-1204AA454F67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39DC52F3-CCAF-4931-99CA-1204AA454F67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39DC52F3-CCAF-4931-99CA-1204AA454F67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39DC52F3-CCAF-4931-99CA-1204AA454F67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
