@@ -97,40 +97,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-responsive.css" />
-    <Content Include="Content\bootstrap-responsive.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\images\glyphicons-halflings-white.png" />
-    <Content Include="Content\images\glyphicons-halflings.png" />
-    <Content Include="Content\js\ss-validation.js" />
-    <Content Include="default.htm" />
+    <Content Include="assets\css\bootstrap-responsive.css" />
+    <Content Include="assets\css\bootstrap-responsive.min.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\img\glyphicons-halflings-white.png" />
+    <Content Include="assets\img\glyphicons-halflings.png" />
+    <Content Include="assets\js\bootstrap.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <None Include="assets\js\jquery-1.9.1.intellisense.js" />
+    <Content Include="assets\js\jquery-1.9.1.js" />
+    <Content Include="assets\js\jquery-1.9.1.min.js" />
+    <Content Include="assets\js\jqunback-1.51.min.js" />
+    <Content Include="assets\js\ss-validation.js" />
+    <Content Include="default.html" />
     <Content Include="Global.asax" />
-    <Content Include="jqunback-1.51.min.js" />
     <Content Include="packages.config" />
-    <Content Include="SampleData.csv" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="README.txt" />
     <Content Include="Requirements.txt" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Web.config" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\AppHost.cs" />
-    <Compile Include="App_Start\PageBase.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="App_Start\WebServiceExamples.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="services\CompanyService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\js\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -139,11 +134,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ignition.Common.Data\Ignition.Common.Data.csproj">
+      <Project>{0e311e52-f6e7-48c2-ac9d-d61f788ba4e4}</Project>
+      <Name>Ignition.Common.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ignition.Contracts\Ignition.Contracts.csproj">
+      <Project>{855fbffc-26cc-4706-890a-3e22615cbbcc}</Project>
+      <Name>Ignition.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ignition.Data\Ignition.Data.csproj">
       <Project>{0176ab39-d0f5-4cdf-9a52-3ed014f3ce95}</Project>
       <Name>Ignition.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

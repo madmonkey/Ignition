@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Audit" xml:space="preserve">
+    <value>USE {7EEE6F1E-C952-4674-96E1-E4DCB35FB698}
+GO
+
+
+IF NOT EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME= 'Audit')
+CREATE TABLE Audit
+(
+AuditID [int]IDENTITY(1,1) NOT NULL,
+Type char(1), 
+TableName varchar(128), 
+PrimaryKeyField varchar(1000), 
+FieldName varchar(128), 
+FieldType varchar(128), 
+OldValue varchar(1000), 
+NewValue varchar(1000), 
+UpdateDate datetime DEFAULT (GetDate())
+)
+GO
+
+
+DECLARE @sql1 varchar(8000), @sql2 varchar(8000), @sql3 varchar(8000) ,@TABLE_NAME sysname, @compatible_triggerfields VARCHAR(8000)
+
+SET NOCOUNT ON
+
+-- L I S T   A L L   T A B L E   N A M E S   F R O M   S C H E M A
+
+-- (EXCEPT Audit and sysdiagrams)
+
+SELECT @TABLE_NAME= MIN(TABLE_NAME) 
+
+FROM INFORMATION_SCHEMA.Tables 
+
+WHERE 
+
+TABLE_TYPE= 'BASE TABLE' 
+
+AND TABLE_NAME != 'sysdiagrams'
+
+AND TABLE_NAME != 'Audit'
+
+AND TABLE_NAME != 'dtproperties'
+
+-- L O O P   T R O U G H   E V E R Y   T A B L E
+
+WHILE @TABLE_NAME IS NOT NULL
+
+BEGIN
+
+   -- D R O P   E X I S T I N G   T R I G G E R   B E F O R E   C R E A T I O N
+
+EXEC('IF OBJECT_ID (''' + @TABLE_NAME+ '_ChangeTracking'', ''TR'') IS NOT NULL DROP TRIGGER ' + @TABLE_NAME+ '_ChangeTracking')
+
+-- E X C L U D E   I N C O M P A T I B L E   F I E L D S
+
+   SET @compatible_triggerfields = NULL
+
+   SELECT @compatible_triggerfields = coalesce(@compatible_triggerfields+'],[','[') + COLUMN_NAME  FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = @TABLE_NAME and DATA_TYPE not in ('text','ntext','image') 
+
+   SET @compatible_triggerfields = @compatible_triggerfields + ']'
+
+   -- D Y N A M I C   C R E A T I O N   O F   A   T R I G G E R
+
+SELECT @sql1 = 
+
+'
+
+--------------------------------------------
+
+--                                        --
+
+--        '+ @TABLE_NAME +'  
+
+--                                        --
+
+--------------------------------------------
+
+CREATE TRIGGER [dbo].[' + @TABLE_NAME+ '_ChangeTracking] on [dbo].[' + @TABLE_NAME+ '] for insert, update, delete
+
+AS
+
+DECLARE @bit INT ,
+
+@field INT ,
+
+@maxfield INT ,
+
+@char INT ,
+
+@fieldname VARCHAR(64) ,
+
+@TableName VARCHAR(64) ,
+
+@PKCols VARCHAR(1000) ,
+
+@sql VARCHAR(2000) , 
+
+@UpdateDate VARCHAR(21) ,
+
+@UserName VARCHAR(64) ,
+
+@Type CHAR(1) ,
+
+@PKSelect VARCHAR(1000) ,
+
+@OldValueSQL VARCHAR(128) ,
+
+@NewValueSQL VARCHAR(128) ,
+
+@fieldtype VARCHAR(32) ,
+
+@compatible_triggerfield BIT
+
+SET NOCOUNT ON
+--You will need to change @TableName to match the table to be audited
+
+select @TableName = ''' + @TABLE_NAME+ '''
+
+-- date and user
+
+SELECT @UserName = SYSTEM_USER , @UpdateDate = CONVERT(VARCHAR(8), GETDATE(), 112) 
+
++ '' '' + CONVERT(VARCHAR(12), GETDATE(), 114)'
+
+SELECT @sql2 = ' 
+
+-- Action
+
+IF EXISTS (SELECT * FROM inserted)
+
+IF EXISTS (SELECT * FROM deleted)
+
+SELECT @Type = ''U''
+
+ELSE
+
+SELECT @Type = ''I''
+
+ELSE
+
+SELECT @Type = ''D''
+
+-- get list of columns
+
+SELECT '+ @compatible_triggerfields +' INTO #ins FROM inserted
+
+SELECT '+ @compatible_triggerfields +' INTO #del FROM deleted
+
+'
+
+SELECT @sql3 = '-- Get primary key columns for full outer join 
+
+SELECT @PKCols = COALESCE(@PKCols + '' and'', '' on'') 
+
+  + '' i.'' + cu.COLUMN_NAME + '' = d.'' + cu.COLUMN_NAME
+
+  FROM    INFORMATION_SCHEMA.TABLE_CONSTRAINTS pk ,
+
+ INFORMATION_SCHEMA.KEY_COLUMN_USAGE cu
+
+  WHERE   pk.TABLE_NAME = @TableName
+
+  AND     CONSTRAINT_TYPE = ''PRIMARY KEY''
+
+  AND     cu.TABLE_NAME = pk.TABLE_NAME
+
+  AND     cu.CONSTRAINT_NAME = pk.CONSTRAINT_NAME
+
+-- Get primary key select for insert
+
+SELECT @PKSelect = COALESCE(@PKSelect+''+'','''') 
+
+  + ''''''&lt;'' + COLUMN_NAME 
+
+  + ''=''''+convert(varchar(100), coalesce(i.'' + COLUMN_NAME +'',d.'' + COLUMN_NAME + ''))+''''&gt;'''''' 
+
+  FROM    INFORMATION_SCHEMA.TABLE_CONSTRAINTS pk ,
+
+  INFORMATION_SCHEMA.KEY_COLUMN_USAGE cu
+
+  WHERE   pk.TABLE_NAME = @TableName
+
+  AND     CONSTRAINT_TYPE = ''PRIMARY KEY''
+
+  AND     cu.TABLE_NAME = pk.TABLE_NAME
+
+  AND     cu.CONSTRAINT_NAME = pk.CONSTRAINT_NAME
+
+IF @PKCols IS NULL
+
+BEGIN
+
+  RAISERROR(''no PK on table %s'', 16, -1, @TableName)
+
+  RETURN
+
+END
+
+SELECT @field = 0, 
+
+  @maxfield = MAX(ORDINAL_POSITION) 
+
+  FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = @TableName
+
+WHILE @field &lt; @maxfield
+
+BEGIN
+
+SELECT @field = MIN(ORDINAL_POSITION)
+
+  FROM INFORMATION_SCHEMA.COLUMNS 
+
+  WHERE TABLE_NAME = @TableName 
+
+  AND ORDINAL_POSITION &gt; @field
+
+SELECT @bit = (@field - 1 )% 8 + 1
+
+SELECT @bit = POWER(2,@bit - 1)
+
+SELECT @char = ((@field - 1) / 8) + 1
+
+IF SUBSTRING(COLUMNS_UPDATED(),@char, 1) &amp; @bit &gt; 0
+
+  OR @Type IN (''I'',''D'')
+
+BEGIN
+
+SELECT @fieldname = COLUMN_NAME, @fieldtype = DATA_TYPE  
+
+  FROM INFORMATION_SCHEMA.COLUMNS 
+
+  WHERE TABLE_NAME = @TableName 
+
+  AND ORDINAL_POSITION = @field
+
+IF @fieldtype = ''text'' or @fieldtype = ''ntext'' or @fieldtype = ''image'' SET @compatible_triggerfield = 0 else SET @compatible_triggerfield = 1
+
+SET @OldValueSQL = '',convert(varchar(1000),d.'' + @fieldname + '')''
+
+SET @NewValueSQL = '',convert(varchar(1000),i.'' + @fieldname + '')''
+
+IF @compatible_triggerfield = 0
+
+BEGIN 
+
+SET @OldValueSQL = '',''''n/a''''''
+
+SET @NewValueSQL = '',''''n/a''''''
+
+END   
+
+SELECT @sql = ''
+
+insert Audit (    Type, 
+
+  TableName, 
+
+  PrimaryKeyField, 
+
+  FieldName,
+
+  FieldType,    
+
+  OldValue, 
+
+  NewValue, 
+
+  UpdateDate
+  )
+
+select '''''' + @Type + '''''','''''' 
+
++ @TableName + '''''','' + @PKSelect
+
++ '','''''' + @fieldname + ''''''''
+
++ '','''''' + @fieldtype + ''''''''
+
++ @OldValueSQL
+
++ @NewValueSQL
+
++ '','''''' + @UpdateDate + ''''''''
+
++ '' from #ins i full outer join #del d''
+
++ @PKCols
+
+IF @compatible_triggerfield = 1
+
+BEGIN
+
+  SET @sql = @sql 
+
+  + '' where i.'' + @fieldname + '' &lt;&gt; d.'' + @fieldname 
+
+  + '' or (i.'' + @fieldname + '' is null and  d.''
+
++ @fieldname
+
++ '' is not null)'' 
+
+  + '' or (i.'' + @fieldname + '' is not null and  d.'' 
+
++ @fieldname
+
++ '' is null)'' 
+
+END
+
+EXEC (@sql)
+
+--EXECUTE spWriteStringToFile @sql,''c:\'',''test.txt''
+
+END
+
+END
+
+'
+
+EXEC(@sql1+@sql2+@sql3);
+
+SELECT @TABLE_NAME = MIN(TABLE_NAME) FROM INFORMATION_SCHEMA.Tables 
+
+WHERE TABLE_NAME &gt; @TABLE_NAME
+
+AND TABLE_TYPE = 'BASE TABLE' 
+
+AND TABLE_NAME != 'sysdiagrams'
+
+AND TABLE_NAME != 'Audit'
+
+AND TABLE_NAME != 'dtproperties'
+
+END</value>
+    <comment>Since we're required to use SQL Server - might as well let it do the heavy lifting</comment>
+  </data>
+</root>

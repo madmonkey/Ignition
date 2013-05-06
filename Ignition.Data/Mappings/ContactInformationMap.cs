@@ -14,6 +14,7 @@ namespace Ignition.Data.Mappings
             Map(x => x.ContactValue);
             Map(x => x.CreatedDateTime).Generated.Insert().Default("GETUTCDATE()");
             Map(x => x.LastUpdatedDateTime).Generated.Always().Default("GETUTCDATE()");
+            Table("ContactInformation");
         }
     }
 }

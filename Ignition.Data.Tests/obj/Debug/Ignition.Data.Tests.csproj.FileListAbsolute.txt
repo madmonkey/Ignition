@@ -16,3 +16,4 @@ C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data.Tes
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data.Tests\bin\Debug\Iesi.Collections.xml
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data.Tests\obj\Debug\Ignition.Data.Tests.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data.Tests\obj\Debug\Ignition.Data.Tests.pdb
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data.Tests\bin\Debug\SampleData.csv

@@ -168,12 +168,12 @@ namespace Ignition.Data
                             var splitter = new[] { "\r\nGO\r\n" };
 
                             #region AutoMagic view/trigger etc. creation
-                            databaseScript = string.Empty;
-                            //databaseScript = SunGardPS.WebUpdater.Service.Data.Scripts.SQLServer.Replace(
-                            //    databaseToken,
-                            //    GetCatalogName(
-                            //        new System.Data.SqlClient.SqlConnectionStringBuilder(
-                            //            cfg.Properties["connection.connection_string"])));
+                            //databaseScript = string.Empty;
+                            databaseScript = Ignition.Data.Scripts.Audit.Replace(
+                                databaseToken,
+                                GetCatalogName(
+                                    new System.Data.SqlClient.SqlConnectionStringBuilder(
+                                        cfg.Properties["connection.connection_string"])));
                             string[] commandTexts = databaseScript.Split(splitter, StringSplitOptions.RemoveEmptyEntries);
                             #endregion
 

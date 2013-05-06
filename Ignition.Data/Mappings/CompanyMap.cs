@@ -16,6 +16,7 @@ namespace Ignition.Data.Mappings
         {
             Id(x => x.Id).GeneratedBy.GuidComb();
             Map(x => x.Name);
+            Map(x => x.Code);
             HasMany(d => d.Contacts).KeyColumn("CompanyId").Cascade.All();
             Map(x => x.CreatedDateTime).Generated.Insert().Default("GETUTCDATE()");
             Map(x => x.LastUpdatedDateTime).Generated.Always().Default("GETUTCDATE()");

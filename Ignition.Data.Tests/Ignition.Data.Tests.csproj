@@ -59,9 +59,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="BasicData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest2.cs" />
+    <Compile Include="SampleData.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ignition.Common.Data\Ignition.Common.Data.csproj">
@@ -74,6 +74,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Ignition\SampleData.csv">
+      <Link>SampleData.csv</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>

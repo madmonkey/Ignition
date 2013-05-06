@@ -2,18 +2,27 @@
 
 namespace Ignition
 {
+    using System.Configuration;
+    using System.Data;
+    using System.Data.SqlClient;
+    using Contracts;
     using NHibernate;
     using ServiceStack.Configuration;
+    using ServiceStack.Logging;
+    using ServiceStack.Logging.Support.Logging;
     using ServiceStack.WebHost.Endpoints;
+    using Services;
 
     //using Ignition.Contracts;
 
     public class Global : System.Web.HttpApplication
     {
+        private const string dbName = "Ignition";
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            //new HelloAppHost().Init();
+            var fh = new Ignition.Data.FluentHelper(dbName, CheckForTablesExist());
+            (new IgnitionServiceAppHost(fh.CreateSessionFactory())).Init();
         }
 
         protected void Session_Start(object sender, EventArgs e)
@@ -46,33 +55,46 @@ namespace Ignition
 
         }
 
-        //public class IgnitionServiceAppHost : AppHostBase
-        //{
-        //    private readonly IContainerAdapter _containerAdapter;
-        //    public IgnitionServiceAppHost(ISessionFactory sessionFactory)
-        //        : base("Ignition Sample", typeof(ProductFindService).Assembly)
-        //    {
-        //        base.Container.Register<ISessionFactory>(sessionFactory);
-        //    }
+        public class IgnitionServiceAppHost : AppHostBase
+        {
+            private readonly IContainerAdapter _containerAdapter;
+            public IgnitionServiceAppHost(ISessionFactory sessionFactory)
+                : base("Ignition Sample", typeof(CompanyService).Assembly)
+            {
+                LogManager.LogFactory = new ConsoleLogFactory(); //<-can be swapped later
+                base.Container.Register<ISessionFactory>(sessionFactory);
+            }
 
-        //    public override void Configure(Funq.Container container)
-        //    {
-        //        container.Adapter = _containerAdapter;
-        //    }
-        //}
-        //public class HelloAppHost : AppHostBase
-        //{
-        //    Tell Service Stack the name of your application and where to find your web services
-        //    public HelloAppHost() : base("Hello Web Services", typeof(HelloService).Assembly) { }
+            public override void Configure(Funq.Container container)
+            {
+                ServiceStack.Text.JsConfig.EmitCamelCaseNames = true;
+                container.Adapter = _containerAdapter;
+                Routes.Add<Company>("/companies").Add<Company>("/companies/{Id*}");
+            }
+        }
 
-        //    public override void Configure(Container container)
-        //    {
-        //        register user-defined REST-ful urls
-        //        Routes
-        //          .Add<Hello>("/hello")
-        //          .Add<Hello>("/hello/{Name}");
-        //    }
-        //}
+        private static bool CheckForTablesExist()
+        {
+            int count = 1000;
+            try
+            {
+                const string command = "SELECT COUNT(*) from information_schema.tables WHERE table_type = 'base table'";
+                var connection = new SqlConnection(ConfigurationManager.ConnectionStrings[dbName].ConnectionString);
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
+                var cmd = new SqlCommand(command, connection);
+                count = (int)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                //LoggingService.Error(ex);
+            }
+
+            return count == 0;
+        }
 
     }
 }

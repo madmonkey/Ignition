@@ -30,3 +30,5 @@ C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\Igni
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\obj\Debug\Ignition.csprojResolveAssemblyReference.cache
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\obj\Debug\Ignition.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\obj\Debug\Ignition.pdb
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\Ignition.Contracts.dll
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition\bin\Ignition.Contracts.pdb

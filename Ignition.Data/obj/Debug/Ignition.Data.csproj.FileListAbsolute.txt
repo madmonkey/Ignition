@@ -11,3 +11,5 @@ C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\bin
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\obj\Debug\Ignition.Data.csprojResolveAssemblyReference.cache
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\obj\Debug\Ignition.Data.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\obj\Debug\Ignition.Data.pdb
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\obj\Debug\Ignition.Data.Scripts.resources
+C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Data\obj\Debug\Ignition.Data.csproj.GenerateResource.Cache
