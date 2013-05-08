@@ -68,8 +68,9 @@
     <Reference Include="ServiceStack.OrmLite.SqlServer">
       <HintPath>packages\ServiceStack.OrmLite.SqlServer.3.9.43\lib\ServiceStack.OrmLite.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.Redis">
-      <HintPath>packages\ServiceStack.Redis.3.9.43\lib\net35\ServiceStack.Redis.dll</HintPath>
+    <Reference Include="ServiceStack.Redis, Version=3.9.44.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\ServiceStack.Redis.3.9.44\lib\net35\ServiceStack.Redis.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.ServiceInterface">
       <HintPath>packages\ServiceStack.3.9.43\lib\net35\ServiceStack.ServiceInterface.dll</HintPath>

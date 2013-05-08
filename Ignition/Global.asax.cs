@@ -2,16 +2,19 @@
 
 namespace Ignition
 {
-    using System.Configuration;
-    using System.Data;
-    using System.Data.SqlClient;
     using Contracts;
-    using NHibernate;
+    using ServiceStack.CacheAccess.Providers;
+    using Services;
+    using ServiceStack.CacheAccess;
     using ServiceStack.Configuration;
     using ServiceStack.Logging;
     using ServiceStack.Logging.Support.Logging;
+    using ServiceStack.Redis;
     using ServiceStack.WebHost.Endpoints;
-    using Services;
+    using System.Configuration;
+    using System.Data;
+    using System.Data.SqlClient;
+    using ISessionFactory = NHibernate.ISessionFactory;
 
     //using Ignition.Contracts;
 
@@ -23,6 +26,7 @@ namespace Ignition
         {
             var fh = new Ignition.Data.FluentHelper(dbName, CheckForTablesExist());
             (new IgnitionServiceAppHost(fh.CreateSessionFactory())).Init();
+            
         }
 
         protected void Session_Start(object sender, EventArgs e)
@@ -57,12 +61,15 @@ namespace Ignition
 
         public class IgnitionServiceAppHost : AppHostBase
         {
+#pragma warning disable 649
             private readonly IContainerAdapter _containerAdapter;
+#pragma warning restore 649
             public IgnitionServiceAppHost(ISessionFactory sessionFactory)
                 : base("Ignition Sample", typeof(CompanyService).Assembly)
             {
                 LogManager.LogFactory = new ConsoleLogFactory(); //<-can be swapped later
-                base.Container.Register<ISessionFactory>(sessionFactory);
+                base.Container.Register<ICacheClient>(new MemoryCacheClient());//<-can also be swapped later to cache-server
+                base.Container.Register(sessionFactory);
             }
 
             public override void Configure(Funq.Container container)
