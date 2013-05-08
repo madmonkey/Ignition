@@ -1,13 +1,11 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace Ignition.Data.Tests
 {
-    using System.Collections.Generic;
     using Common.Data;
     using Entities;
     using System.Linq;
-    using FluentAssertions;
 
     [TestClass]
     public class UnitTest1
@@ -42,6 +40,7 @@ namespace Ignition.Data.Tests
                 var areas = grouping.GroupBy(a => a.Country).Select(g => new {g.Key, Total = g.Count(c => true)});
             }
         }
+          
     }
 
 }
