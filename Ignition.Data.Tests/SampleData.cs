@@ -21,14 +21,15 @@ namespace Ignition.Data.Tests
             using (var unit = new UnitOfWork(factory.OpenSession()))
             {
                 var companyRepo = new Repository<CompanyEntity>(unit.Session);
-                var reader = new StreamReader(File.OpenRead(@"SampleData.csv"));
+                //this is not an exercise in parsing - swap to tab-separated to avoid comma-delimited data garbage
+                var reader = new StreamReader(File.OpenRead(@"SampleData.Scrubbed.txt"));
                 reader.ReadLine(); //skip headers
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
                     if (line != null)
                     {
-                        var values = line.Split(',');
+                        var values = line.Split('\t');
                         var c = new CompanyEntity
                             {
                                 Code = values[0],
