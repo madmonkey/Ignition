@@ -3,6 +3,7 @@
 namespace Ignition
 {
     using Contracts;
+    using Contracts.DataContracts;
     using ServiceStack.CacheAccess.Providers;
     using Services;
     using ServiceStack.CacheAccess;
@@ -76,7 +77,9 @@ namespace Ignition
             {
                 ServiceStack.Text.JsConfig.EmitCamelCaseNames = true;
                 container.Adapter = _containerAdapter;
-                Routes.Add<Company>("/companies").Add<Company>("/companies/{Id*}");
+                Routes.Add<Company>("/companies").Add<Company>("/companies/{Id}").Add<Company>("/companies/{Name}");
+                Routes.Add<SummaryCategory>("/categories");
+                Routes.Add<SummaryLocation>("/locations");
             }
         }
 

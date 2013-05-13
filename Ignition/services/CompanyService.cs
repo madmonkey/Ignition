@@ -15,9 +15,17 @@ namespace Ignition.Services
     public class CompanyService : ServiceStack.ServiceInterface.Service
     {
         public ISessionFactory Factory { get; set; } //Injected by IOC
+
+        /// <summary>
+        /// Gets the specified company.
+        /// </summary>
+        /// <param name="company">The company.</param>
+        /// <returns></returns>
         public List<Company> Get(Company company)
         {
             LogManager.LogFactory.GetLogger("").InfoFormat("Here {0}", DateTime.Now);
+            if (Request.QueryString.HasKeys() && Request.QueryString["Name"] != null)
+                return Get(Request.QueryString["Name"]);
             var cacheKey = UrnId.Create<List<Company>>(string.Concat(Request.PathInfo, Request.QueryString));
             var cacheReturn = Cache.Get<List<Company>>(cacheKey);
             if (cacheReturn == null)
@@ -33,6 +41,22 @@ namespace Ignition.Services
                 }
             }
             return cacheReturn;
+        }
+
+        /// <summary>
+        /// Gets the company by the specified search by.
+        /// </summary>
+        /// <param name="searchBy">The search by.</param>
+        /// <returns></returns>
+        public List<Company> Get(string searchBy)
+        {
+            using (var unit = new UnitOfWork(Factory.OpenSession()))
+            {
+                var r = new ReadOnlyRepository<CompanyEntity>(unit.Session);
+                var e = r.Where(w => w.Name.Contains(searchBy)).Select(c => c.TranslateTo<Company>()).ToList();
+                unit.Commit();
+                return e.Take(5).ToList();
+            }
         }
     }
 }

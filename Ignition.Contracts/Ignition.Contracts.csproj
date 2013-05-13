@@ -64,7 +64,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContracts\SummaryCategory.cs" />
     <Compile Include="DataContracts\Company.cs" />
+    <Compile Include="DataContracts\SummaryLocation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

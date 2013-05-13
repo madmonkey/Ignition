@@ -59,6 +59,7 @@
     <Compile Include="Mappings\AddressMapping.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Mappings\AuditMapping.cs" />
     <Compile Include="Mappings\CompanyMap.cs" />
     <Compile Include="Mappings\ContactInformationMap.cs">
       <SubType>Code</SubType>

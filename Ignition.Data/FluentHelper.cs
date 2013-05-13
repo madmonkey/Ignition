@@ -57,7 +57,7 @@ namespace Ignition.Data
         /// <remarks>Used primarily for unit-testing ONLY! All others should use connection key.</remarks>
         public FluentHelper(bool autoConfig)
             : this(() => Fluently.Configure()
-                            .Database(MsSqlConfiguration.MsSql2000.ConnectionString(
+                            .Database(MsSqlConfiguration.MsSql2005.ConnectionString(
                                 c => c.Server(@".")
                                         .Database("Ignition")
                                         .TrustedConnection()))

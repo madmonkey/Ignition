@@ -16,7 +16,7 @@ namespace Ignition.Data.Tests
         [TestMethod]
         public void LoadSampleData()
         {
-            var fh = new FluentHelper(false);
+            var fh = new FluentHelper(true);
             var factory = fh.CreateSessionFactory();
             using (var unit = new UnitOfWork(factory.OpenSession()))
             {
