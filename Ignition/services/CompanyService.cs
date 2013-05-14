@@ -2,6 +2,7 @@
 namespace Ignition.Services
 {
     using Common.Data;
+    using Data;
     using Data.Entities;
     using Ignition.Contracts;
     using ServiceStack.Common;
@@ -50,12 +51,16 @@ namespace Ignition.Services
         /// <returns></returns>
         public List<Company> Get(string searchBy)
         {
+            //var fh = new FluentHelper(false); //don't auto=configure as it will delete data
+            //var factory = fh.CreateSessionFactory();
             using (var unit = new UnitOfWork(Factory.OpenSession()))
             {
                 var r = new ReadOnlyRepository<CompanyEntity>(unit.Session);
-                var e = r.Where(w => w.Name.Contains(searchBy)).Select(c => c.TranslateTo<Company>()).ToList();
+                var e = r.Where(w => w.Name.Contains(searchBy)).Select(c => c).Take(5).ToList();
                 unit.Commit();
-                return e.Take(5).ToList();
+                return e.Select(c => c.TranslateTo<Company>()).ToList();
+                //var e = r.Where(w => w.Name.Contains(searchBy)).Select(c => c.TranslateTo<Company>()).ToList();
+                //return e.Take(5).ToList();
             }
         }
     }

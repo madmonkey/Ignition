@@ -6,6 +6,7 @@ namespace Ignition.Data.Tests
     using Common.Data;
     using Entities;
     using System.Linq;
+    using FluentAssertions;
 
     [TestClass]
     public class UnitTest1
@@ -41,6 +42,20 @@ namespace Ignition.Data.Tests
             }
         }
 
+        [TestMethod]
+        public void SelectTopCompanies()
+        {
+            var searchBy = "a";
+            var fh = new FluentHelper(false); //don't auto=configure as it will delete data
+            var factory = fh.CreateSessionFactory();
+            using (var unit = new UnitOfWork(factory.OpenSession()))
+            {
+                var r = new ReadOnlyRepository<CompanyEntity>(unit.Session);
+                var e = r.Where(w => w.Name.Contains(searchBy)).Select(c => c).Take(5).ToList();
+                unit.Commit();
+                e.Count.ShouldBeEquivalentTo(5);
+            }
+        }
         [TestMethod]
         public void AuditQuery()
         {

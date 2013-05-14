@@ -4,8 +4,6 @@ namespace Ignition.Data
     using Common.Data;
     using FluentNHibernate.Cfg;
     using FluentNHibernate.Cfg.Db;
-    using FluentNHibernate.Conventions;
-    using FluentNHibernate.Conventions.Instances;
     using NHibernate;
     using NHibernate.Tool.hbm2ddl;
     using System;
@@ -14,7 +12,6 @@ namespace Ignition.Data
     using System.Data.OleDb;
     using System.Data.SqlClient;
     using System.Reflection;
-    using Ignition.Common.Data;
 
     /// <summary>
     /// The fluent-helper for common tasks
@@ -57,10 +54,7 @@ namespace Ignition.Data
         /// <remarks>Used primarily for unit-testing ONLY! All others should use connection key.</remarks>
         public FluentHelper(bool autoConfig)
             : this(() => Fluently.Configure()
-                            .Database(MsSqlConfiguration.MsSql2005.ConnectionString(
-                                c => c.Server(@".")
-                                        .Database("Ignition")
-                                        .TrustedConnection()))
+                            .Database(GetConfigurationOption("Ignition"))
                             .Mappings(m => m.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly()))
                             .ExposeConfiguration(c =>
                             {
@@ -96,7 +90,9 @@ namespace Ignition.Data
             switch (ConfigurationManager.ConnectionStrings[connectionKey].ProviderName)
             {
                 case "System.Data.SqlClient":
-                    return MsSqlConfiguration.MsSql2000.ConnectionString(connection);
+                    return PersistenceConfigurer(connection);
+                    //return MsSqlConfiguration.MsSql2000.ConnectionString(connection);
+                    //var sql = new MsSqlConfiguration().Dialect<FixedMsSqlDialect>();
 
                 case "System.Data.OracleClient":
                     return OracleDataClientConfiguration.Oracle9.ConnectionString(connection);
@@ -143,8 +139,16 @@ namespace Ignition.Data
                     }
 
                 default:
-                    return MsSqlConfiguration.MsSql2000.ConnectionString(connection);
+                    //return MsSqlConfiguration.MsSql2000.ConnectionString(connection);
+                    return PersistenceConfigurer(connection);
             }
+        }
+
+        private static IPersistenceConfigurer PersistenceConfigurer(string connection)
+        {
+            var provider = MsSqlConfiguration.MsSql2005.ConnectionString(connection);
+            provider.Dialect<FixedMsSqlDialect>();
+            return provider;
         }
 
         /// <summary>
@@ -218,6 +222,22 @@ namespace Ignition.Data
                        ? builder["Initial Catalog"].ToString()
                        : (builder.ContainsKey("Database")
                        ? builder["Database"].ToString() : string.Empty);
+        }
+    }
+
+    /// <summary>
+    /// The purpose of this class is to fix an issue with the internal dialect within FluentNhibernate
+    /// Even though the underlying data provider (in this case SQL Server) supports TOP functionality
+    /// the created provider incorrectly reports 'false'
+    /// </summary>
+    public class FixedMsSqlDialect : NHibernate.Dialect.MsSql2005Dialect
+    {
+        public override bool SupportsVariableLimit
+        {
+            get
+            {
+                return true;
+            }
         }
     }
 }
