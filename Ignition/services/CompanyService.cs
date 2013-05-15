@@ -26,7 +26,9 @@ namespace Ignition.Services
         {
             LogManager.LogFactory.GetLogger("").InfoFormat("Here {0}", DateTime.Now);
             if (Request.QueryString.HasKeys() && Request.QueryString["Name"] != null)
+            {
                 return Get(Request.QueryString["Name"]);
+            }
             var cacheKey = UrnId.Create<List<Company>>(string.Concat(Request.PathInfo, Request.QueryString));
             var cacheReturn = Cache.Get<List<Company>>(cacheKey);
             if (cacheReturn == null)
@@ -51,16 +53,12 @@ namespace Ignition.Services
         /// <returns></returns>
         public List<Company> Get(string searchBy)
         {
-            //var fh = new FluentHelper(false); //don't auto=configure as it will delete data
-            //var factory = fh.CreateSessionFactory();
             using (var unit = new UnitOfWork(Factory.OpenSession()))
             {
                 var r = new ReadOnlyRepository<CompanyEntity>(unit.Session);
                 var e = r.Where(w => w.Name.Contains(searchBy)).Select(c => c).Take(5).ToList();
                 unit.Commit();
                 return e.Select(c => c.TranslateTo<Company>()).ToList();
-                //var e = r.Where(w => w.Name.Contains(searchBy)).Select(c => c.TranslateTo<Company>()).ToList();
-                //return e.Take(5).ToList();
             }
         }
     }

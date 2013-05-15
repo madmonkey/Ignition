@@ -3,7 +3,6 @@
 namespace Ignition
 {
     using Contracts;
-    using Contracts.DataContracts;
     using ServiceStack.CacheAccess.Providers;
     using Services;
     using ServiceStack.CacheAccess;
@@ -80,6 +79,7 @@ namespace Ignition
                 Routes.Add<Company>("/companies").Add<Company>("/companies/{Id}").Add<Company>("/companies/{Name}");
                 Routes.Add<SummaryCategory>("/categories");
                 Routes.Add<SummaryLocation>("/locations");
+                Routes.Add<Audit>("/audit").Add<Audit>("/audit/{pg}{limit}");
             }
         }
 

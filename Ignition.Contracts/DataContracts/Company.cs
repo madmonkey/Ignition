@@ -6,18 +6,10 @@ namespace Ignition.Contracts
     using System;
 
     [Api("GET or DELETE a single entity by Id. Use POST to create a new and PUT to update it")]
-    [Route("/v1/customers", "POST,PUT,PATCH,DELETE")]
-    [Route("/v1/customers/{Id}")]
-    public class Company
+    [Route("/customers", "POST,PUT,PATCH,DELETE")]
+    [Route("/customers/{Id}")]
+    public class Company : Request
     {
-        /// <summary>
-        /// Initializes a new instance of the movie.
-        /// </summary>
-        public Company()
-        {
-            //this.Genres = new List<string>();
-        }
-
         public Guid Id { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }

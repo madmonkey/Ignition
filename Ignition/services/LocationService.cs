@@ -1,8 +1,8 @@
 ﻿
-namespace Ignition.services
+namespace Ignition.Services
 {
     using Common.Data;
-    using Contracts.DataContracts;
+    using Contracts;
     using Data.Entities;
     using NHibernate;
     using System.Collections.Generic;

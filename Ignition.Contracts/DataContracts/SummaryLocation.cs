@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Ignition.Contracts.DataContracts
+namespace Ignition.Contracts
 {
     using ServiceStack.ServiceHost;
 
     [Api("GET summary by location")]
-    [Route("/v1/locations")]
-    public class SummaryLocation
-    {
-        
-    }
+    [Route("/locations", "GET")]
+    public class SummaryLocation { }
 
-    public class SummaryLocationResponse
+    public class SummaryLocationResponse : Response
     {
         public string Country { get; set; }
         public int Number { get; set; }

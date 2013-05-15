@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Ignition.Contracts.DataContracts
+namespace Ignition.Contracts
 {
     using ServiceStack.ServiceHost;
 
     [Api("GET summary of categories")]
-    [Route("/v1/categories")]
-    public class SummaryCategory{}
-    public class SummaryCategoryResponse
+    [Route("/categories","GET")]
+    public class SummaryCategory : Request { }
+    public class SummaryCategoryResponse : Response
     {
         public string Category { get; set; }
         public int Number { get; set; }
