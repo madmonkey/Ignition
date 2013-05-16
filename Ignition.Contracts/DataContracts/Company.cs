@@ -7,7 +7,7 @@ namespace Ignition.Contracts
 
     [Api("GET or DELETE a single entity by Id. Use POST to create a new and PUT to update it")]
     [Route("/customers", "POST,PUT,PATCH,DELETE")]
-    [Route("/customers/{Id}")]
+    [Route("/customers/{id}")]
     public class Company : Request
     {
         public Guid Id { get; set; }
@@ -15,11 +15,8 @@ namespace Ignition.Contracts
         public string Name { get; set; }
     }
 
-    public class CompanyResponse
+    public class CompanyResponse : Request
     {
-        /// <summary>
-        /// Gets or sets the movie.
-        /// </summary>
         public Company Company { get; set; }
     }
     

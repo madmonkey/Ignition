@@ -1,12 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Ignition.Common.Data
 {
+    /// <summary>
+    /// Custom implementation of index "friendly" UUID - i.e - no fragmentation
+    /// </summary>
     static public class GuidComb
     {
+        /// <summary>
+        /// Generates a sequential id - with the time 'bits' in the front as opposed to random.
+        /// </summary>
+        /// <returns></returns>
         static public Guid GenerateSequential()
         {
             byte[] destinationArray = Guid.NewGuid().ToByteArray();

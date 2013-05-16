@@ -1,22 +1,20 @@
-﻿using System;
+﻿
 
 namespace Ignition
 {
     using Contracts;
-    using ServiceStack.CacheAccess.Providers;
     using Services;
     using ServiceStack.CacheAccess;
+    using ServiceStack.CacheAccess.Providers;
     using ServiceStack.Configuration;
     using ServiceStack.Logging;
     using ServiceStack.Logging.Support.Logging;
-    using ServiceStack.Redis;
     using ServiceStack.WebHost.Endpoints;
+    using System;
     using System.Configuration;
     using System.Data;
     using System.Data.SqlClient;
     using ISessionFactory = NHibernate.ISessionFactory;
-
-    //using Ignition.Contracts;
 
     public class Global : System.Web.HttpApplication
     {
@@ -68,7 +66,7 @@ namespace Ignition
                 : base("Ignition Sample", typeof(CompanyService).Assembly)
             {
                 LogManager.LogFactory = new ConsoleLogFactory(); //<-can be swapped later
-                base.Container.Register<ICacheClient>(new MemoryCacheClient());//<-can also be swapped later to cache-server
+                base.Container.Register<ICacheClient>(new MemoryCacheClient());//<-can also be swapped later to cache-server (redis, whatever)
                 base.Container.Register(sessionFactory);
             }
 
@@ -76,7 +74,7 @@ namespace Ignition
             {
                 ServiceStack.Text.JsConfig.EmitCamelCaseNames = true;
                 container.Adapter = _containerAdapter;
-                Routes.Add<Company>("/companies").Add<Company>("/companies/{Id}").Add<Company>("/companies/{Name}");
+                Routes.Add<Company>("/companies").Add<Company>("/companies/{id}").Add<Company>("/companies/{name}");
                 Routes.Add<SummaryCategory>("/categories");
                 Routes.Add<SummaryLocation>("/locations");
                 Routes.Add<Audit>("/audit").Add<Audit>("/audit/{pg}{limit}");

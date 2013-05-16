@@ -1,6 +1,5 @@
 ﻿namespace Ignition.Contracts
 {
-    using System;
     using System.Runtime.Serialization;
 
     public class Response : IExtensibleDataObject

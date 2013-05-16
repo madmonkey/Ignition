@@ -22,8 +22,6 @@ namespace Ignition.Services
                 unit.Commit();
                 var total = (from g in grouping select g.Number).Sum();
                 return grouping.Select(c => new SummaryCategoryResponse { Category = c.Category, Number = c.Number, Total = total}).ToList();
-                //Cache.Set(cacheKey, e);
-                // return e;
             }
         }
     }

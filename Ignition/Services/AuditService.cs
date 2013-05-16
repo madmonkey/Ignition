@@ -28,7 +28,7 @@ namespace Ignition.Services
             using (var unit = new UnitOfWork(Factory.OpenSession()))
             {
                 var r = new ReadOnlyRepository<AuditEntity>(unit.Session);
-                var recs = r.Select(a => a.TranslateTo<AuditResponse>()).Skip((pageNumber - 1)* maxResults).Take(maxResults).ToList();
+                var recs = r.OrderByDescending(a => a.Id).Select(a => a.TranslateTo<AuditResponse>()).Skip((pageNumber - 1) * maxResults).Take(maxResults).ToList();
                 unit.Commit();
                 return recs;
             }

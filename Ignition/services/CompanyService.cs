@@ -2,7 +2,6 @@
 namespace Ignition.Services
 {
     using Common.Data;
-    using Data;
     using Data.Entities;
     using Ignition.Contracts;
     using ServiceStack.Common;
@@ -25,9 +24,9 @@ namespace Ignition.Services
         public List<Company> Get(Company company)
         {
             LogManager.LogFactory.GetLogger("").InfoFormat("Here {0}", DateTime.Now);
-            if (Request.QueryString.HasKeys() && Request.QueryString["Name"] != null)
+            if (Request.QueryString.HasKeys() && Request.QueryString["name"] != null)
             {
-                return Get(Request.QueryString["Name"]);
+                return Get(Request.QueryString["name"]);
             }
             var cacheKey = UrnId.Create<List<Company>>(string.Concat(Request.PathInfo, Request.QueryString));
             var cacheReturn = Cache.Get<List<Company>>(cacheKey);

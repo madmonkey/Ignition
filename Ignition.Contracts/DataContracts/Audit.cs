@@ -15,7 +15,6 @@ namespace Ignition.Contracts
     public class AuditResponse : Response
     {
         public int Id { get; set; }
-        //public virtual string PrimaryKeyField { get; set; }
         public string Type { get; set; }
         public string TableName { get; set; }
         public string FieldName { get; set; }

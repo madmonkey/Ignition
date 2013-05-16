@@ -5,6 +5,10 @@ namespace Ignition.Data.Entities
     using System.Collections.Generic;
     using Common.Data;
 
+    /// <summary>
+    /// A system needs to focus around people - Contact is the main entity
+    /// </summary>
+    /// <see cref="http://www.hanselman.com/blog/CommunityCallToActionNOTNorthwind.aspx"/>
     public class ContactEntity
     {
         public virtual Guid Id { get; protected set; }

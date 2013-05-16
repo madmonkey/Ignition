@@ -2,7 +2,6 @@
 namespace Ignition.Data.Mappings
 {
     using Entities;
-    using Ignition.Common.Data;
     using FluentNHibernate.Mapping;
 
     public class ContactMap : ClassMap<ContactEntity>

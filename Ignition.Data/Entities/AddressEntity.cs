@@ -3,6 +3,9 @@ namespace Ignition.Data.Entities
 {
     using System;
 
+    /// <summary>
+    /// The address that a 'contact' is associated with
+    /// </summary>
     public class AddressEntity
     {
         public virtual Guid Id { get; protected set; }
