@@ -96,7 +96,6 @@ namespace Ignition.Data.Tests
                 var uniqueCompanies = (from c in contacts select c.Company).Distinct().ToList();
                 uniqueCompanies.Count.Should().Be(1, "We only added one company");
                 companyRepo.Delete(uniqueCompanies).Should().BeTrue("We should be able to do this"); //always "do" in batch when can!
-                //Parallel.ForEach(uniqueCompanies, (c) => companyRepo.Delete(c));
                 unit.Commit();
             }
         }

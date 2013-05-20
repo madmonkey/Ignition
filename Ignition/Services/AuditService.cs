@@ -1,6 +1,7 @@
 ﻿
 namespace Ignition.Services
 {
+    using System.Collections.Specialized;
     using Common.Data;
     using Contracts;
     using Data.Entities;
@@ -34,4 +35,5 @@ namespace Ignition.Services
             }
         }
     }
+
 }

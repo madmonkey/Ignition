@@ -77,7 +77,7 @@ namespace Ignition
                 Routes.Add<Company>("/companies").Add<Company>("/companies/{id}").Add<Company>("/companies/{name}");
                 Routes.Add<SummaryCategory>("/categories");
                 Routes.Add<SummaryLocation>("/locations");
-                Routes.Add<Audit>("/audit").Add<Audit>("/audit/{pg}{limit}");
+                Routes.Add<Audit>("/audit").Add<Audit>("/application.html#/audit").Add<Audit>("/audit/{pg}{limit}").Add<Audit>("/application.html#/audit/{pg}{limit}");
             }
         }
 
