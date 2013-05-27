@@ -1,0 +1,93 @@
+﻿@inherits ViewPage<List<Ignition.Contracts.CompanyResponse>>
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "CompaniesController";
+}
+
+
+<div class="text-left">
+    <form id="customers">
+        <div data-ng-app="app" data-ng-data-controller="CompaniesController" id="comp">
+            <table class="table">
+                <tr>
+                    <td><label class="label">Companies</label></td>
+                    <td><input class="search-query" id="searchText" name="name" type="text" placeholder="Search..." /></td>
+                    <td>
+                        <div class="btn-toolbar">
+                            <div class="btn-group">
+                                <a href="#addCompany" role="button" class="btn" data-toggle="modal">Add Company</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                @*<tr data-ng-repeat ="c in companies">
+                <td class="text-info">{{c.Id}}</td>   
+                <td class="text-info">{{c.Code}}</td>
+                <td class="text-info">{{c.Name}}</td>*@
+            </table>
+        </div>
+        
+        <div id="addCompany" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">Modal header</h3>
+            </div>
+            <div class="modal-body">
+                <p>One fine body…</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                <button class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+
+        <table class="table table-hover table-striped">
+            <tr>
+                <th data-ng-show='false'>Id</th>
+                <th>Code</th>
+                <th>Name</th>
+            </tr>
+            @foreach (var c in Model)
+                {
+                    <tr>
+                        <td class="text-info">@c.Id</td>   
+                        <td class="text-info">@c.Code</td>
+                        <td class="text-info">@c.Name</td>  
+                    </tr>
+                }    
+        </table>
+        <label class="label">Contacts</label>
+        <table class="table table-hover table-striped">
+            <tr>
+                <th data-ng-show='false'>Id</th>
+                <th>Code</th>
+                <th>First</th>
+                <th>Last</th>
+                <th>Title</th>
+                <th>Category</th>
+            </tr>    
+        </table>
+        <label class="label">Information</label>
+        <table class="table table-hover table-striped">
+            <tr>
+                <th data-ng-show='false'>Id</th>
+                <th>Type</th>
+                <th>Value</th>
+            </tr>
+        </table>
+        <label class="label">Addresses</label>
+        <table class="table table-hover table-striped">
+            <tr>
+                <th data-ng-show='false'>Id</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Region</th>
+                <th>PostalCode</th>
+                <th>Country</th>
+            </tr>
+        </table>
+    </form>
+</div>

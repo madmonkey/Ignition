@@ -158,7 +158,6 @@ namespace Ignition.Data
         private static void BuildSchema(NHibernate.Cfg.Configuration cfg)
         {
             const string databaseToken = "{7EEE6F1E-C952-4674-96E1-E4DCB35FB698}";
-            string databaseScript;
             new SchemaExport(cfg).Create(false, true);
             try
             {
@@ -173,7 +172,7 @@ namespace Ignition.Data
 
                             #region AutoMagic view/trigger etc. creation
                             //databaseScript = string.Empty;
-                            databaseScript = Ignition.Data.Scripts.Audit.Replace(
+                            string databaseScript = Ignition.Data.Scripts.Audit.Replace(
                                 databaseToken,
                                 GetCatalogName(
                                     new System.Data.SqlClient.SqlConnectionStringBuilder(

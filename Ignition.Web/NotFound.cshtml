@@ -1,0 +1,38 @@
+﻿@using Ignition.Contracts
+@{
+    Layout = "_Layout";
+    var search = (@Request.PathInfo ?? "").SplitOnLast("/").Last().Trim();
+}
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Page Not Found</title>
+        
+    </head>
+    <body>        
+        <h1>Page Not Found</h1>
+        
+        <div id="content">
+            <p>
+                We're sorry <b>@Request.PathInfo</b> is not here.
+            </p> 
+            @if (!string.IsNullOrEmpty(search))
+            {
+                <p> 
+                    Maybe Google has it?
+                </p>
+                <form action="https://www.google.com/search" method="GET">
+                    <input type="search" name="q" value="@search"/>
+                    <input type="submit" value="Search"/>
+                </form>
+            }
+        </div>
+    
+        @*<div id="preview">
+            <h2>Implemenation</h2>
+            <h3><b>View</b> <a href="https://github.com/ServiceStack/RazorRockstars/blob/master/src/RazorRockstars.WebHost/NotFound.cshtml">/NotFound.cshtml</a></h3>
+            <script src="https://gist.github.com/3618038.js"></script>
+        </div>    *@
+        
+    </body>
+</html>

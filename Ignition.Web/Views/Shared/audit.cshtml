@@ -1,0 +1,50 @@
+﻿@inherits ViewPage<List<Ignition.Contracts.AuditResponse>>
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Audit";
+}
+
+<div class="text-left" id="audit">
+    <form id="history">
+        <label class="label">Audit</label>
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Id</th>
+                <th>Operation</th>
+                <th>Table</th>
+                <th>Field</th>
+                <th>Type</th>
+                <th>OldValue</th>
+                <th>NewValue</th>
+                <th>Changed</th>
+            </tr>
+            
+            @foreach (var rec in Model)
+            {
+                <tr>
+                    <td class="text-info">@rec.Id</td>
+                    <td class="text-info">@rec.Type</td>    
+                    <td class="text-info">@rec.TableName</td>
+                    <td class="text-info">@rec.FieldName</td>
+                    <td class="text-info">@rec.FieldType</td>
+                    <td class="text-warning">@rec.OldValue</td>
+                    <td class="text-success">@rec.NewValue</td>
+                    <td class="text-info">@rec.UpdateDate</td>
+                </tr>
+            }
+            
+            @*<tr data-ng-repeat ="rec in records">
+                <td class="text-info">{{rec.Id}}</td> 
+                <td class="text-info">{{rec.Type}}</td> 
+                <td class="text-info">{{rec.TableName}}</td> 
+                <td class="text-info">{{rec.FieldName}}</td> 
+                <td class="text-info">{{rec.FieldType}}</td> 
+                <td class="text-warning">{{rec.OldValue}}</td> 
+                <td class="text-success">{{rec.NewValue}}</td> 
+                <td class="text-info">{{rec.UpdateDate}}</td>
+            </tr>*@
+        </table>
+        <button onclick="window.location.href='/audit?pg=7'">Search</button>
+    </form>
+</div>

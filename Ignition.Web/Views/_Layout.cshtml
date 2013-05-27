@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html lang="en-us">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Requirements project">
+    <meta name="author" content="Andrew Del Preore">
+    <title>Northwind Customer Sample</title>
+    <style>
+        body 
+        {
+            /*background-image: url("/Content/img/ignition-25.png");*/
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+</head>
+    <body>
+        <!-- navbar -->
+        <div class="navbar container-fluid">
+            <div class="navbar-inner">
+                <div class="container">
+                    <ul class="nav">
+                        <li class="navbar-link"><a href="/companies">Home</a></li>
+                        <li class="navbar-link"><a href="/audit">Audit</a></li>
+                        <li class="navbar-link"><a href="/companies">Maintennce</a></li>
+                        <li class="navbar-link"><a href="/summaries">Summary</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /.navbar -->        
+        <!--Injected parts-->
+        <div id="body">  
+            <div class="container-fluid" id="content">        
+                @RenderBody()
+            </div>
+        </div>        <!--/.Injected parts-->
+
+        <link href="/Content/bootstrap.min.css" rel="stylesheet"/>
+        <link href="/Content/bootstrap-responsive.min.css" rel="stylesheet"/>
+        <link href="/Content/bootstrap-modal.min.css" rel="stylesheet"/>
+        <footer>
+            <table class="table">
+                <tr>
+                    <td><a href="https://docs.google.com/file/d/0B6UkjIpviBvFN0tyeHgzNXZIMEU/view">Andrew Del Preore</a></td>
+                    <td><a href="http://istreaming.blogspot.com">Blog</a></td>
+                    <td><a href="mailto:adelpreore@gmail.com">Write Me</a></td>
+                    <td><a href="https://plus.google.com/114346479962219025011/posts"><img src="/Content/img/g-plus-icon-32x32.png" alt="Google+"/></a></td>
+                </tr>
+            </table>
+        </footer>        <!--For development use this-->                   @*<script src="../Scripts/angular.min.js" type="text/javascript"></script>*@
+        <!--For production use this-->
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>-->
+        @*<script src="../Scripts/jquip.events.css.ajax.min.js" type="text/javascript"></script>*@
+        <script src="../Scripts/jquery-2.0.0.min.js" type="text/javascript"></script>
+        <script src="../Scripts/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../Scripts/bootstrap-modal.js" type="text/javascript"></script>
+        <script src="../Scripts/bootstrap-modalmanager.js" type="text/javascript"></script>
+    </body>
+</html>
