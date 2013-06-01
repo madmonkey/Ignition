@@ -1,10 +1,103 @@
-﻿@inherits ViewPage<List<Ignition.Contracts.SummaryResponse>>
+﻿@inherits ViewPage<Ignition.Contracts.SummaryResponse>
 
 @{
     Layout = "_Layout";
     ViewBag.Title = "SummariesController";
 }
 <div>
+    
+    <table class="table table-condensed">
+        <tr>
+            <td>Category</td>
+            <td>Location</td>
+        </tr>
+        <tr>
+            <td>
+                <div id="chart_category" style="width: 320px; height: 320px"></div>
+            </td>
+            <td>
+                <div id="chart_location" style="width: 320px; height: 320px"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="table_category" style="width: 320px; height: 645px"></div>
+            </td>  
+            <td>
+                <div id="table_location" style="width: 320px; height: 645px"></div>
+            </td> 
+        </tr> 
+    </table>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", { packages: ["corechart", "table"] });
+        google.setOnLoadCallback(drawCharts);
+        function drawCharts() {
 
+            var data = google.visualization.arrayToDataTable([
+                ['Category', 'Number']
+                @foreach (var c in Model.ByCategory)
+                {
+                    @Html.Raw(",")
+                    @Html.Raw("['" + c.Category + "'," + c.Number +"]")
+                    
+                }
+            ]);
+
+            var chart = new google.visualization.PieChart(document.getElementById('chart_category'));
+            chart.draw(data);
+
+            var datatable = google.visualization.arrayToDataTable([
+                ['Category', 'Number', 'Percentage']
+                @foreach (var c in Model.ByCategory)
+                {
+                    @Html.Raw(",")
+                    @Html.Raw("['" + c.Category + "'," + c.Number + "," + Math.Round(c.Percentage,2) +  "]")
+                    
+                }
+            ]);
+            var charttable = new google.visualization.Table(document.getElementById('table_category'));
+            charttable.draw(datatable);
+
+            var loc = google.visualization.arrayToDataTable([
+                ['Category', 'Number']
+                @foreach (var c in Model.ByLocation)
+                {
+                    @Html.Raw(",")
+                    @Html.Raw("['" + c.Country + "'," + c.Number +"]")
+                    
+                }
+            ]);
+
+            var chartloc = new google.visualization.PieChart(document.getElementById('chart_location'));
+            chartloc.draw(loc);
+
+
+
+            var tableloc = google.visualization.arrayToDataTable([
+                ['Location', 'Number', 'Percentage']
+                @foreach (var c in Model.ByLocation)
+                {
+                    @Html.Raw(",")
+                    @Html.Raw("['" + c.Country + "'," + c.Number + "," + Math.Round(c.Percentage,2) +  "]")
+                    
+                }
+            ]);
+            var loctable = new google.visualization.Table(document.getElementById('table_location'));
+            loctable.draw(tableloc);
+
+          @*var geodata = google.visualization.arrayToDataTable([
+                ['Country', 'Number']
+                @foreach (var c in Model.ByLocation)
+                {
+                    @Html.Raw(",")
+                    @Html.Raw("['" + c.Country + "'," + c.Number +"]")
+                    
+                }
+          ]);
+            var geochart = new google.visualization.GeoChart(document.getElementById('chart_location'));
+            geochart.draw(geodata, { width: 556, height: 347 });*@
+
+        }
+    </script>
 </div>

@@ -16,15 +16,15 @@ namespace Ignition.Contracts
     public class SummaryLocationResponse : Response
     {
         public string Country { get; set; }
-        public int Number { get; set; }
-        public int Total { get; set; }
+        public double Number { get; set; }
+        public double Total { get; set; }
         public double Percentage { get; set; }
     }
     public class SummaryCategoryResponse : Response
     {
         public string Category { get; set; }
-        public int Number { get; set; }
-        public int Total { get; set; }
+        public double Number { get; set; }
+        public double Total { get; set; }
         public double Percentage { get; set; }
     }
 }

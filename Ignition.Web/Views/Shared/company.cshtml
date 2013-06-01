@@ -46,14 +46,15 @@
 
         <table class="table table-hover table-striped">
             <tr>
-                <th data-ng-show='false'>Id</th>
+                <th class="hidden">Id</th>
                 <th>Code</th>
                 <th>Name</th>
             </tr>
+            
             @foreach (var c in Model)
                 {
                     <tr>
-                        <td class="text-info">@c.Id</td>   
+                        <td class="text-info hidden">@c.Id</td>   
                         <td class="text-info">@c.Code</td>
                         <td class="text-info">@c.Name</td>  
                     </tr>
@@ -62,7 +63,7 @@
         <label class="label">Contacts</label>
         <table class="table table-hover table-striped">
             <tr>
-                <th data-ng-show='false'>Id</th>
+                <th class="hidden">Id</th>
                 <th>Code</th>
                 <th>First</th>
                 <th>Last</th>
@@ -73,7 +74,7 @@
         <label class="label">Information</label>
         <table class="table table-hover table-striped">
             <tr>
-                <th data-ng-show='false'>Id</th>
+                <th class="hidden">Id</th>
                 <th>Type</th>
                 <th>Value</th>
             </tr>
@@ -81,7 +82,7 @@
         <label class="label">Addresses</label>
         <table class="table table-hover table-striped">
             <tr>
-                <th data-ng-show='false'>Id</th>
+                <th class="hidden">Id</th>
                 <th>Address</th>
                 <th>City</th>
                 <th>Region</th>

@@ -24,11 +24,16 @@ namespace Ignition.Web.Services
         public List<CompanyResponse> Get(Company company)
         {
             LogManager.LogFactory.GetLogger("").InfoFormat("Here {0}", DateTime.Now);
-            if (Request.QueryString.HasKeys() && Request.QueryString["name"] != null)
+            if (!Request.QueryString.HasKeys())
+            {
+                return new List<CompanyResponse>(){new CompanyResponse()};
+            }
+            if(Request.QueryString["name"] != null)
             {
                 return Get(Request.QueryString["name"]);
             }
-            var cacheKey = UrnId.Create<List<CompanyResponse>>(string.Concat(Request.PathInfo, Request.QueryString));
+            
+            var cacheKey = UrnId.Create<List<CompanyResponse>>(string.Concat(Request.PathInfo, Request.QueryString["id"]));
             var cacheReturn = Cache.Get<List<CompanyResponse>>(cacheKey);
             if (cacheReturn == null)
             {
