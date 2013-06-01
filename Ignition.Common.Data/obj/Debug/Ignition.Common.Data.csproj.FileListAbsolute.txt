@@ -1,5 +1,4 @@
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Common.Data\bin\Debug\Ignition.Common.Data.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Common.Data\bin\Debug\Ignition.Common.Data.pdb
-C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Common.Data\obj\Debug\Ignition.Common.Data.csprojResolveAssemblyReference.cache
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Common.Data\obj\Debug\Ignition.Common.Data.dll
 C:\Users\andrew\Documents\Visual Studio 2012\Projects\Ignition\Ignition.Common.Data\obj\Debug\Ignition.Common.Data.pdb

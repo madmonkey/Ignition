@@ -15,7 +15,7 @@ namespace Ignition.Web.Services
     public class CompanyService : ServiceStack.ServiceInterface.Service
     {
         public ISessionFactory Factory { get; set; } //Injected by IOC
-
+        
         /// <summary>
         /// Gets the specified company.
         /// </summary>
@@ -42,7 +42,7 @@ namespace Ignition.Web.Services
                     var r = new ReadOnlyRepository<CompanyEntity>(unit.Session);
                     var e = r.Where(w => company.Id.Equals(ReflectionUtils.GetDefaultValue(company.Id.GetType())) || w.Id == company.Id)
                         .OrderBy(c => c.Name)
-                        .Select(c => c.TranslateTo<CompanyResponse>()).ToList();
+                        .Select(Transpose).ToList();
                     unit.Commit();
                     Cache.Set(cacheKey, e);
                     return e;
@@ -63,8 +63,33 @@ namespace Ignition.Web.Services
                 var r = new ReadOnlyRepository<CompanyEntity>(unit.Session);
                 var e = r.Where(w => w.Name.Contains(searchBy)).Select(c => c).Take(5).ToList();
                 unit.Commit();
-                return e.Select(c => c.TranslateTo<CompanyResponse>()).ToList();
+                return e.Select(Transpose).ToList();
             }
+        }
+
+        /// <summary>
+        /// Transposes the specified complex entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        /// <returns></returns>
+        private static CompanyResponse Transpose(CompanyEntity entity)
+        {
+            return new CompanyResponse
+                {
+                    Code = entity.Code,
+                    Id = entity.Id,
+                    Name = entity.Name,
+                    Contacts = entity.Contacts.Select(cs => new Contact
+                        {
+                            Id = cs.Id,
+                            Category = cs.Category,
+                            FirstName = cs.FirstName,
+                            LastName = cs.LastName,
+                            Title = cs.Title,
+                            Addresses = cs.Addresses.Select(a=> a.TranslateTo<AddressInformation>()).ToList(),
+                            ContactInformation = cs.ContactInformation.Select(ci=> ci.TranslateTo<ContactInformation>()).ToList()
+                        }).ToList()
+                };
         }
     }
 }

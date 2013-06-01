@@ -139,7 +139,6 @@ namespace Ignition.Web
                 Routes.Add<Company>("/companies").Add<Company>("/companies/{id}").Add<Company>("/companies/{name}");
                 Routes.Add<Summary>("/summaries");
                 Routes.Add<Audit>("/audit").Add<Audit>("/audit/{pg}{limit}");
-
             }
         }
 

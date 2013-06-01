@@ -6,6 +6,14 @@
 }
 
 <div class="text-left" id="audit">
+    <table>
+            <tr>
+            <td><button class="btn btn-small" onclick="nav(13)"><i class="icon-step-backward"></i></button></td>
+            <td><button class="btn btn-small"><i class="icon-backward"></i></button></td>
+            <td><button class="btn btn-small"><i class="icon-forward"></i></button></td>
+            <td><button class="btn btn-small"><i class="icon-step-forward"></i></button></td>
+            </tr>
+        </table>
     <form id="history">
         <label class="label">Audit</label>
         <table class="table table-striped table-hover">
@@ -45,6 +53,34 @@
                 <td class="text-info">{{rec.UpdateDate}}</td>
             </tr>*@
         </table>
-        <button onclick="window.location.href='/audit?pg=7'">Search</button>
+        @*<button onclick="window.location.href='/audit?pg=7'">Search</button>*@
+        <table>
+            <tr>
+                <td><button class="btn btn-small"><i class="icon-step-backward"></i></button></td>
+                <td><button class="btn btn-small"><i class="icon-backward"></i></button></td>
+                <td><button class="btn btn-small"><i class="icon-forward"></i></button></td>
+                <td><button class="btn btn-small"><i class="icon-step-forward"></i></button></td>
+            </tr>
+        </table>
     </form>
+    <script type="text/javascript">
+        var currentPage;
+        function nav(pg) {
+            $.get('audit?pg=' + pg,
+                function (data) {
+                    //Do whatever u waht with response "Data"
+                    alert(data);
+                    currentPage = pg;
+                });
+        }
+    </script>
+    @*<script type="text/javascript">
+            function nav(v) {
+                $.get('?pg='+ v, function (data) {
+                    
+                }
+                );
+            }
+ 
+</script>*@
 </div>

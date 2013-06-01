@@ -36,11 +36,17 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Category', 'Number']
-                @foreach (var c in Model.ByCategory)
+                @if (@Model != null)
                 {
-                    @Html.Raw(",")
-                    @Html.Raw("['" + c.Category + "'," + c.Number +"]")
-                    
+                    if (Model.ByCategory != null)
+                    {
+                        foreach (var c in Model.ByCategory)
+                        {
+                            @Html.Raw(",")
+                            @Html.Raw("['" + c.Category + "'," + c.Number + "]")
+
+                        }
+                    }
                 }
             ]);
 
@@ -49,25 +55,37 @@
 
             var datatable = google.visualization.arrayToDataTable([
                 ['Category', 'Number', 'Percentage']
-                @foreach (var c in Model.ByCategory)
+                @if (@Model != null)
                 {
-                    @Html.Raw(",")
-                    @Html.Raw("['" + c.Category + "'," + c.Number + "," + Math.Round(c.Percentage,2) +  "]")
-                    
+                    if (Model.ByCategory != null)
+                    {
+                        foreach (var c in Model.ByCategory)
+                        {
+                            @Html.Raw(",")
+                            @Html.Raw("['" + c.Category + "'," + c.Number + "," + Math.Round(c.Percentage, 2) + "]")
+
+                        }
+                    }
                 }
-            ]);
+                ]);
             var charttable = new google.visualization.Table(document.getElementById('table_category'));
             charttable.draw(datatable);
 
             var loc = google.visualization.arrayToDataTable([
                 ['Category', 'Number']
-                @foreach (var c in Model.ByLocation)
+                @if (@Model != null)
                 {
-                    @Html.Raw(",")
-                    @Html.Raw("['" + c.Country + "'," + c.Number +"]")
-                    
+                    if (Model.ByLocation != null)
+                    {
+                        foreach (var c in Model.ByLocation)
+                        {
+                            @Html.Raw(",")
+                            @Html.Raw("['" + c.Country + "'," + c.Number + "]")
+
+                        }
+                    }
                 }
-            ]);
+                ]);
 
             var chartloc = new google.visualization.PieChart(document.getElementById('chart_location'));
             chartloc.draw(loc);
@@ -76,13 +94,19 @@
 
             var tableloc = google.visualization.arrayToDataTable([
                 ['Location', 'Number', 'Percentage']
-                @foreach (var c in Model.ByLocation)
+                @if (@Model != null)
                 {
-                    @Html.Raw(",")
-                    @Html.Raw("['" + c.Country + "'," + c.Number + "," + Math.Round(c.Percentage,2) +  "]")
-                    
+                    if (Model.ByLocation != null)
+                    {
+                        foreach (var c in Model.ByLocation)
+                        {
+                            @Html.Raw(",")
+                            @Html.Raw("['" + c.Country + "'," + c.Number + "," + Math.Round(c.Percentage, 2) + "]")
+
+                        }
+                    }
                 }
-            ]);
+                ]);
             var loctable = new google.visualization.Table(document.getElementById('table_location'));
             loctable.draw(tableloc);
 

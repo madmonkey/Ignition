@@ -25,6 +25,7 @@ namespace Ignition.Web.Services
                 {
                     var r = new ReadOnlyRepository<ContactEntity>(unit.Session);
                     var g = r.Select(c => new SummaryCategoryResponse() {Category = c.Category}).ToList();
+                    var grouping = (r.Select(c => c.Addresses.FirstOrDefault())).ToList();
                     unit.Commit();
                     summaryResponse.ByCategory =
                         g.GroupBy(ce => ce.Category)
@@ -42,26 +43,36 @@ namespace Ignition.Web.Services
                                                     }
                                                 : null;
                                  }).ToList();
-
-                }
-                using (var unit = new UnitOfWork(Factory.OpenSession()))
-                {
-                    var r = new ReadOnlyRepository<ContactEntity>(unit.Session);
-                    //it's a one to one from the dataset - but could select off of a primary address property
-                    var grouping = (r.Select(c => c.Addresses.FirstOrDefault())).ToList();
-                    unit.Commit();
-                    var areas =
-                        grouping.GroupBy(a => a.Country)
-                                .Select(g => new {g.Key, Number = g.Count(c => true), Total = grouping.Count()});
+                    
+                    var areas = grouping.GroupBy(a => a.Country)
+                                .Select(gr => new { gr.Key, Number = gr.Count(c => true), Total = grouping.Count() });
                     summaryResponse.ByLocation =
                         areas.Select(c => new SummaryLocationResponse
-                            {
-                                Country = c.Key,
-                                Number = c.Number,
-                                Total = c.Total,
-                                Percentage = (double) (c.Number*100)/c.Total
-                            }).ToList();
+                        {
+                            Country = c.Key,
+                            Number = c.Number,
+                            Total = c.Total,
+                            Percentage = (double)(c.Number * 100) / c.Total
+                        }).ToList();
                 }
+                //using (var unit = new UnitOfWork(Factory.OpenSession()))
+                //{
+                //    var r = new ReadOnlyRepository<ContactEntity>(unit.Session);
+                //    //it's a one to one from the dataset - but could select off of a primary address property
+                //    var grouping = (r.Select(c => c.Addresses.FirstOrDefault())).ToList();
+                //    unit.Commit();
+                //    var areas =
+                //        grouping.GroupBy(a => a.Country)
+                //                .Select(g => new {g.Key, Number = g.Count(c => true), Total = grouping.Count()});
+                //    summaryResponse.ByLocation =
+                //        areas.Select(c => new SummaryLocationResponse
+                //            {
+                //                Country = c.Key,
+                //                Number = c.Number,
+                //                Total = c.Total,
+                //                Percentage = (double) (c.Number*100)/c.Total
+                //            }).ToList();
+                //}
 
                 return summaryResponse;
             }

@@ -7,7 +7,7 @@ namespace Ignition.Contracts
     using System;
 
     [Api("GET or DELETE a single entity by Id. Use POST to create a new and PUT to update it")]
-    [Route("/customers", "POST,PUT,PATCH,DELETE")]
+    [Route("/customers", "POST,PUT,GET,DELETE")]
     [Route("/customers/{id}")]
     public class Company : Request
     {
@@ -40,7 +40,7 @@ namespace Ignition.Contracts
 
     public class ContactInformation : Response
     {
-        public Guid Id { get; protected set; }
+        public Guid Id { get; set; }
         public string ContactType { get; set; }
         public string ContactValue { get; set; }
         public DateTime CreatedDateTime { get; set; }
@@ -49,7 +49,7 @@ namespace Ignition.Contracts
 
     public class AddressInformation : Response
     {
-        public virtual Guid Id { get; protected set; }
+        public virtual Guid Id { get; set; }
         public string Address { get; set; }
         public virtual string City { get; set; }
         public virtual string Region { get; set; }
