@@ -4,6 +4,7 @@ namespace Ignition.Contracts
 {
     using System;
     using ServiceStack.ServiceHost;
+    using ServiceStack.Text;
 
     [Api("GET or DELETE a single entity by Id. Use POST to create a new and PUT to update it")]
     [Route("/audit", "GET")]
@@ -12,6 +13,7 @@ namespace Ignition.Contracts
     {
         
     }
+    [Csv(CsvBehavior.FirstEnumerable)]
     public class AuditResponse : Response
     {
         public int Id { get; set; }
@@ -21,6 +23,6 @@ namespace Ignition.Contracts
         public string FieldType { get; set; }
         public string OldValue { get; set; }
         public string NewValue { get; set; }
-        public DateTime UpdateDate { get; set; }
+        public string UpdateDate { get; set; }
     }
 }

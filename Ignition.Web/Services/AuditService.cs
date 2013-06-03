@@ -8,7 +8,11 @@ namespace Ignition.Web
     using ServiceStack.Common;
     using System.Collections.Generic;
     using System.Linq;
+    using ServiceStack.ServiceInterface;
+    using ServiceStack.Text;
 
+    [ClientCanSwapTemplates]
+    [DefaultView("audit")]
     public class AuditService : ServiceStack.ServiceInterface.Service
     {
         public ISessionFactory Factory { get; set; } //Injected by IOC
